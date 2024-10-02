@@ -1,0 +1,76 @@
+<!-- result.html -->
+ 
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>처리된 이미지</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: rgb(18, 18, 23);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            color: white;
+        }
+        .header {
+            text-align: center;
+            width: 100%;
+            padding: 1rem;
+            margin-bottom: 2rem;
+        }
+        .site-name {
+            font-size: 4rem;
+            font-weight: bold;
+        }
+        .site-description {
+            font-size: 1.2rem;
+            font-weight: 300;
+            margin-top: 0.5rem;
+        }
+        .container {
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 90%;
+            max-width: 400px;
+        }
+        h1 {
+            margin-bottom: 1rem;
+        }
+        h2 {
+            margin-top: 2rem;
+            font-size: 1.5rem;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            margin-top: 1rem;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="site-name">Chord Swap</div>
+        <div class="site-description">Recognize sheet music and change chords</div>
+    </div>
+    <div class="container">
+        <h1>처리된 이미지</h1>
+        <h2>원본 이미지</h2>
+        <img src="{{ url_for('uploaded_file', filename=original_image) }}" alt="Original Image">
+        <h2>처리된 이미지</h2>
+        <img src="{{ url_for('processed_file', filename=processed_image) }}" alt="Processed Image">
+    </div>
+</body>
+</html>
